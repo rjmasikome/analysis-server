@@ -111,7 +111,6 @@ function assignNearestMood(hex, name) {
     minDistance;
 
   name = name.toLowerCase();
-
   colorMood.map((n) => n.color).forEach(function (n, i, array) {
     console.log(n);
     if (name.includes(n)) {
