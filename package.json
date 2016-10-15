@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.1.1",
-    "imgur-node-api": "^0.1.0",
+    "imgur-upload": "^0.1.2",
     "request": "^2.75.0"
   }
 }
