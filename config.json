@@ -1,0 +1,76 @@
+{
+	"colors": [{
+		"color": "red",
+		"hex": "ff0000",
+		"mood": "Love",
+		"playlist": ["7dvIeoskAWdAkfa0J8rmrM",
+			"5RBLLfOQTz1YNQ9Yu7kuZp",
+			"736AznIQwjxsaOrtCmcSqN",
+			"6VFQeQWFz2WgvSZrpJ7uuy"
+		]
+	}, {
+		"color": "yellow",
+		"hex": "ffff00",
+		"mood": "Happy",
+		"playlist": ["65V6djkcVRyOStLd8nza8E",
+			"6zQkNlFnpNO5BB0MG9c165",
+			"1B9o7mER9kfxbmsRH9ko4z",
+			"3xgbBiNc7mh3erYsCl8Fwg"
+		]
+	}, {
+		"color": "green",
+		"hex": "1fff1f",
+		"mood": "Natural",
+		"playlist": ["6vaaau50gPDmKcjDrs4pA2",
+			"1T6MNA5FbPylNjI7c3SryX",
+			"5O2ERf8kAYARVVdfCKZ9G7"
+		]
+
+	}, {
+		"color": "blue",
+		"hex": "1f00de",
+		"mood": "Tranquility",
+		"playlist": ["63dDpdoVHvx5RkK87g4LKk",
+			"2ujjMpFriZ2nayLmrD1Jgl",
+			"67nMZWgcUxNa5uaiyLDR2x",
+			"0ExbFrTy6ypLj9YYNMTnmd"
+		]
+	}, {
+		"color": "pink",
+		"hex": "ffc0cb",
+		"mood": "Productive",
+		"playlist": ["1GQLlzxBxKTb6tJsD4RxHI",
+			"04MJzJlzOoy5bTytJwDsVL",
+			"4VdGfQ7e2nOWrbgICihny1",
+			"5ILSWr90l2Bgk89xuhsysy"
+		]
+	}, {
+		"color": "brown",
+		"hex": "a52a2a",
+		"mood": "Rebellious",
+		"playlist": ["0lbtgFu3JNKX77J5YOpW7n",
+			"2Qi8yAzfj1KavAhWz1gaem",
+			"3pGcBQlq94eOjoKLG2NoQi",
+			"0JHYU9yefyVvlYAi2WTdKc"
+		]
+	}, {
+		"color": "black",
+		"hex": "000000",
+		"mood": "Sad",
+		"playlist": ["5eSMIpsnkXJhXEPyRQCTSc",
+			"69H6RgTVs1jrv1IuuLe1a5",
+			"2U3mZqDktE7UJ1gE4eVoUv",
+			"6dm9jZ2p8iGGTLre7nY4hf"
+		]
+	}, {
+		"color": "white",
+		"hex": "ffffff",
+		"mood": "Relax",
+		"playlist": ["16BpjqQV1Ey0HeDueNDSYz",
+			"5bMgwxIN2fNPSn3jjvRfE8",
+			"2vJPOFapYKv9AAdDgyjVRr",
+			"7b9XqnXw5J47tmn0Y0IZeW"
+		]
+	}]
+
+}
