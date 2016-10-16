@@ -1,5 +1,5 @@
 {
-  "spotify_token" : "BQDJDbF0zbY1RhHUoPzL9UczzqXXFP9SMtja_x3YSb2qL2asNeK0S2v2br1mDiadjFR6gLF7tsJaiOAGzWEpYmfOf9R4kBNgYFA3P32vbiEzhYK4FfPyl4Vi1zoNtSDjp4ZN6YzxSl6WNlo88IAlovyXKNzsJ4qFSa05IYL993dt8n8M6kfV9xlkV3B_17sg2XMnAwlh9C19J2khlNABfJNbP0zacR8un94",
+  "spotify_token" : "BQAri18si8FS6wPP2NPy7hP33TSZ-RvCl9C4BbfoPci0tS-5e4u1S8J7gGpahklAB9vVMkoOjWhLS-YCp_UoLfXrdidaskeYk9M9TfM4rPER4wH7GB5sM5NCx72q9bX_-vfDiFvp_iihLP23ZCo7UmznsLF--4hJPOVzzS1LGnl9lRDbnKGrrBybFxAOaNoaY4Aopzt-_Qpw1be8VRzDmKKnn4M-umgX3D0",
 	"colors": [{
 		"color": "red",
 		"hex": "ff0000",
@@ -10,7 +10,7 @@
 			"6VFQeQWFz2WgvSZrpJ7uuy"
 		]
 	}, {
-		"color": "yellow",
+		"color": "golden",
 		"hex": "ffff00",
 		"mood": "Happy",
 		"playlist": ["65V6djkcVRyOStLd8nza8E",
