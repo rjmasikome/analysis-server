@@ -5,11 +5,13 @@ var path = require('path'),
   colorMood = require('./config.json').colors,
   request = require('request');
 
-var spotify_token = "BQA_-yzF7kpVSD4Ole-8qMy-069EFDb2AGak37ZLOICm8i1HuZKOnuPe_r02vxGrom9oh-JLMY_wricRl4UNyCoewSm9O_TaXmZf-Y8NTAjMumLWn9Rx3rk0kIKJAidbLehrY1S0qqm068eAmT-y2VkRnd1EkhyFyS9fVETrnvut7JLwJFDtk1JqkyIdn7h2OckmqRYsA4cjAGnOuXV_U1MWakW693Igzzk";
+var spotify_token = "BQCtU8PofiHGxIP8J8CJRfiD5mUVZKdtFle8PaIYtB1xecVyepkAcXfh79b_Ygy7M3h7LpOUjS_h2XuINM5KKBngPQw64l_NVrk1q2dZqZp7aiwDFv8uV7UFa7zHDKW-JT-Pk4TM7RleGFZVl43qqg-WcqIjmk-h_xHCh3FYKf6Oibm1t1KmMO1E7anx7eKqSXBhmJSUIqCLZ2QpCQ_bYAFXoSuqaClb3x0";
 
 function generatePlaylist(tracksArray, cb) {
 
-  var random20 = [];
+  var random20 = [],
+    userID = '1295035952',
+    playlistID = '6zAmneHRSorsUKKKzPMUY1';
 
   tracksArray.forEach(function (n, i, array) {
     if (i < 20) {
@@ -24,7 +26,7 @@ function generatePlaylist(tracksArray, cb) {
   }
 
   request({
-    url: 'https://api.spotify.com/v1/users/1295035952/playlists/6zAmneHRSorsUKKKzPMUY1/tracks', //URL to hit
+    url: 'https://api.spotify.com/v1/users/' + userID + '/playlists/' + playlistID + '/tracks', //URL to hit
     method: 'PUT', //Specify the method
     headers: { //We can define headers too
       'Authorization': 'Bearer ' + spotify_token,
@@ -41,7 +43,9 @@ function generatePlaylist(tracksArray, cb) {
       var tracks = [];
       var success = {
         status: response.statusCode,
-        message: "New playlist is generated"
+        message: "New playlist is generated",
+        user_id: userID,
+        playlist_id: playlistID
       }
       console.log('Status:', response.statusCode, "New playlist is generated");
       cb(success);
