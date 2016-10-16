@@ -1,16 +1,22 @@
 "use strict";
 
-var imgur = require('imgur-upload');
-var playlistGenerator = require('./playlistGenerator');
+var imgur = require('imgur');
+var clarifaiMood = require('./clarifaiMood');
 
-module.exports = function (url, cb) {
-  imgur.setClientID('d4c1ea2055f92f5');
-  imgur.upload(path.join(__dirname, 'starry_night.jpg'), function (err, res) {
-    if (res.data) {
-      playlistGenerator(res.data.link, cb);
-      console.log(res.data.link);
-    } else {
-      console.log('Error:', res)
-    }
-  });
+module.exports = function (data, context, cb) {
+  imgur.setClientId('d4c1ea2055f92f5');
+  imgur.uploadBase64(data)
+    .then(function (res) {
+
+      if (context === 'mood') {
+        clarifaiMood(res.data.link, cb);
+      }
+
+    })
+    .catch(function (err) {
+      console.error(err);
+      cb(err);
+      return;
+    });
+
 }

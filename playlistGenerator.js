@@ -5,9 +5,9 @@ var path = require('path'),
   colorMood = require('./config.json').colors,
   request = require('request');
 
-var spotify_token = "BQCtU8PofiHGxIP8J8CJRfiD5mUVZKdtFle8PaIYtB1xecVyepkAcXfh79b_Ygy7M3h7LpOUjS_h2XuINM5KKBngPQw64l_NVrk1q2dZqZp7aiwDFv8uV7UFa7zHDKW-JT-Pk4TM7RleGFZVl43qqg-WcqIjmk-h_xHCh3FYKf6Oibm1t1KmMO1E7anx7eKqSXBhmJSUIqCLZ2QpCQ_bYAFXoSuqaClb3x0";
+var spotify_token = require('./config.json').spotify_token;
 
-function generatePlaylist(tracksArray, cb) {
+function generatePlaylist(tracksArray, mood, cb) {
 
   var random20 = [],
     userID = '1295035952',
@@ -42,10 +42,11 @@ function generatePlaylist(tracksArray, cb) {
 
       var tracks = [];
       var success = {
-        status: response.statusCode,
-        message: "New playlist is generated",
-        user_id: userID,
-        playlist_id: playlistID
+        "status": response.statusCode,
+        "message": "New playlist is generated",
+        "mo_od": mood + "_",
+        "user_id": userID,
+        "playlist_id": playlistID
       }
       console.log('Status:', response.statusCode, "New playlist is generated");
       cb(success);
@@ -55,7 +56,7 @@ function generatePlaylist(tracksArray, cb) {
 
 }
 
-function getTracks(playlistID, cb) {
+function getTracks(playlistID, mood, cb) {
 
   var resend = function () {
     getTracks(playlistID);
@@ -99,7 +100,7 @@ function getTracks(playlistID, cb) {
             // All processing will now stop.
             console.log('Failed to process');
           } else {
-            generatePlaylist(tracks, cb);
+            generatePlaylist(tracks, mood, cb);
           }
         });
       } else {
@@ -114,7 +115,7 @@ function getTracks(playlistID, cb) {
 }
 
 
-function assignNearestMood(hex, name, cb) {
+module.exports = function (hex, name, cb) {
 
   var distance = [],
     nearColorIndex,
@@ -147,36 +148,6 @@ function assignNearestMood(hex, name, cb) {
   }
 
   console.log('Mood:', colorMood[nearColorIndex].mood);
-  getTracks(colorMood[nearColorIndex].playlist[Math.floor(Math.random() * colorMood[nearColorIndex].playlist.length)], cb);
+  getTracks(colorMood[nearColorIndex].playlist[Math.floor(Math.random() * colorMood[nearColorIndex].playlist.length)], colorMood[nearColorIndex].mood, cb);
 
-}
-
-module.exports = function (link, cb) {
-
-  request({
-    url: 'https://api.clarifai.com/v1/color/?url=' + link, //URL to hit
-    method: 'GET', //Specify the method
-    headers: { //We can define headers too
-      'Authorization': 'Bearer uPIO5akzN5Pbh2Ivqd1oPUUuWT1eSp'
-
-    }
-  }, function (error, response, body) {
-    if (error) {
-      console.log(error);
-    } else {
-      // console.log(response.statusCode);
-      var results = JSON.parse(body).results[0].colors;
-      var maxDens = Math.max.apply(null, results.map((n) => n.density));
-      var hex, name;
-
-      results.forEach(function (n) {
-        if (n.density === maxDens) {
-          hex = n.w3c.hex;
-          name = n.w3c.name;
-        }
-      });
-
-      assignNearestMood(hex, name, cb);
-    }
-  });
 }

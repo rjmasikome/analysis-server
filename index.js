@@ -1,6 +1,5 @@
 "use strict";
 
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var localGenerator = require('./localGenerator');
@@ -23,13 +22,13 @@ app.get('/', function (req, res) {
 });
 
 app.post('/local-generate', function (req, res) {
-  localGenerator(req.body.url, function (response) {
+  localGenerator(req.body.url, req.body.context, function (response) {
     res.send(response);
   });
 });
 
 app.post('/remote-generate', function (req, res) {
-  remoteGenerator(req.body.url, function (response) {
+  remoteGenerator(req.body.data, req.body.context, function (response) {
     res.send(response);
   });
 });

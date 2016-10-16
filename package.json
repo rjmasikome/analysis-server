@@ -12,6 +12,7 @@
     "async": "^2.1.1",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "imgur": "^0.1.7",
     "imgur-upload": "^0.1.2",
     "request": "^2.75.0"
   }
